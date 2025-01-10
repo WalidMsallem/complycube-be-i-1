@@ -10,6 +10,8 @@ dotenv.config();
 const app = express();
 app.use(bodyParser.json());
 
+app.options('*', cors());
+
 // CORS configuration
 app.use(cors({
   origin: [
