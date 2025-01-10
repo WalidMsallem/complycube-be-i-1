@@ -10,8 +10,7 @@ export default async function handler(req, res) {
       'https://api.complycube.com/v1/tokens',
       {
         clientId: process.env.COMPLYCUBE_CLIENT_ID,
-        // referrer: 'https://www.google.com/*',
-        referrer: 'http://localhost/*',
+        referrer: process.env.REFERRER_WEBSITE,
       },
       {
         headers: {
