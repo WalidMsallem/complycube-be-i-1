@@ -27,9 +27,10 @@ app.use(cors({
 
 const PORT = process.env.PORT || 5000;
 
-app.post('/api/generate-token', (req, res) => generateTokenHandler(req, res));
-app.post('/api/create-client', (req, res) => createClientHandler(req, res));
-app.post('/api/create-client-sdk-token', (req, res) => createClientAndReturnSDKTokenHandler(req, res));
+app.post('/api/token', (req, res) => generateTokenHandler(req, res));
+app.post('/api/client', (req, res) => createClientHandler(req, res));
+app.post('/api/client-token', (req, res) => createClientAndReturnSDKTokenHandler(req, res));
+
 app.get('/api/health', (req, res) => healthHandler(req, res));
 
 app.listen(PORT, () => {
