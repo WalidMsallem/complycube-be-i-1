@@ -1,15 +1,16 @@
 import axios from 'axios'
-// const express = require('express')
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' })
   }
 
+  const { clientId } = req.body
   try {
     const response = await axios.post(
       'https://api.complycube.com/v1/tokens',
       {
-        clientId: process.env.COMPLYCUBE_CLIENT_ID,
+        clientId,
         referrer: process.env.REFERRER_WEBSITE,
       },
       {
