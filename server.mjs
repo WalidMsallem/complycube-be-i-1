@@ -9,7 +9,17 @@ dotenv.config();
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors());
+
+// CORS configuration
+app.use(cors({
+  origin: [
+    'http://localhost:3000', // Local React app
+    'https://complycube-i-1.vercel.app', // Deployed React app on Vercel
+  ],
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
+
 
 const PORT = process.env.PORT || 5000;
 
