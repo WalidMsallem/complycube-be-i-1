@@ -4,6 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import generateTokenHandler from './api/generate-token.js';
 import createClientHandler from './api/create-client.js';
+import createClientAndReturnSDKTokenHandler from './api/create-client-and-return-sdk-token.js';
 import healthHandler from './api/health.js';
 
 dotenv.config();
@@ -28,6 +29,7 @@ const PORT = process.env.PORT || 5000;
 
 app.post('/api/generate-token', (req, res) => generateTokenHandler(req, res));
 app.post('/api/create-client', (req, res) => createClientHandler(req, res));
+app.post('/api/create-client-sdk-token', (req, res) => createClientAndReturnSDKTokenHandler(req, res));
 app.get('/api/health', (req, res) => healthHandler(req, res));
 
 app.listen(PORT, () => {
