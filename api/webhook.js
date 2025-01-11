@@ -1,4 +1,4 @@
-const { EventVerifier } = require("@complycube/api");
+import { EventVerifier } from "@complycube/api"
 
 // Webhook secret from environment variables
 const webhookSecret = process.env.COMPLYCUBE_WEBHOOK_SECRET;
