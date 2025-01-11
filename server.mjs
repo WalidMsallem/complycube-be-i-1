@@ -38,7 +38,7 @@ app.post('/api/checks', (req, res) => createChecksHandler(req, res));
 // Retrieve checks for a client
 app.get('/api/checks', (req, res) => getClientCheckListHandler(req, res));
 
-app.get('/api/webhook', (req, res) => webhookHandler(req, res));
+app.post('/api/webhook', (req, res) => webhookHandler(req, res));
 
 
 app.get('/api/health', (req, res) => healthHandler(req, res));
