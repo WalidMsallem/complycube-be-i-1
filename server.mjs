@@ -7,6 +7,7 @@ import createClientHandler from './api/create-client.js';
 import createClientAndReturnSDKTokenHandler from './api/create-client-and-return-sdk-token.js';
 import createChecksHandler from './api/create-checks.js';
 import getClientCheckListHandler from './api/client-checks-list.js';
+import webhookHandler from './api/webhook.js';
 import healthHandler from './api/health.js';
 
 dotenv.config();
@@ -36,6 +37,9 @@ app.post('/api/client-token', (req, res) => createClientAndReturnSDKTokenHandler
 app.post('/api/checks', (req, res) => createChecksHandler(req, res));
 // Retrieve checks for a client
 app.get('/api/checks', (req, res) => getClientCheckListHandler(req, res));
+
+app.get('/api/webhook', (req, res) => webhookHandler(req, res));
+
 
 app.get('/api/health', (req, res) => healthHandler(req, res));
 
