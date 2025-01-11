@@ -73,7 +73,8 @@ export const createCheck = async ({
     if (options) {
       payload.options = options
     }
-
+console.log('======= payload',payload)
+console.log('======= options',options)
     // Make the API request
     const response = await axios.post(
       'https://api.complycube.com/v1/checks',
@@ -97,9 +98,9 @@ export const createCheck = async ({
 }
 
 export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
-  }
+//   if (req.method !== "POST") {
+//     return res.status(405).json({ error: "Method not allowed" });
+//   }
 
   try {
     const { clientId, checks } = req.body;
