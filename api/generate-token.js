@@ -16,10 +16,6 @@ export const generateToken = async ({ clientId }) =>
   )
 
 export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' })
-  }
-
   try {
     const response = await generateToken(req.body)
     res.status(200).json(response.data)
