@@ -40,7 +40,7 @@ export const createCheck = async ({
 
     // Include extra parameters if required for the check type
     if (
-      ['document_check', 'identity_check', 'enhanced_identity_check'].includes(
+      ['document_check', 'identity_check', 'enhanced_identity_check','proof_of_address_check'].includes(
         type
       )
     ) {
@@ -73,7 +73,7 @@ export const createCheck = async ({
     if (options) {
       payload.options = options
     }
-console.log('======= payload',payload)
+ 
 console.log('======= options',options)
     // Make the API request
     const response = await axios.post(
