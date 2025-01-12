@@ -1,5 +1,5 @@
-import { assignAddress } from "./assign-address";
-import { createCheck } from "./create-checks";
+import assignAddress from "./assign-address.js";
+import { createCheck } from "./create-checks.js";
 
 export default async function handler(req, res) {
   const { clientId, documentId } = req.body;

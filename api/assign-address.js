@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const assignAddress = async ({ clientId, ...addressData }) => {
+export default async function assignAddress({ clientId, ...addressData }) {
   try {
     const response = await axios.post(
       'https://api.complycube.com/v1/addresses',

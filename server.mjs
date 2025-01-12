@@ -12,7 +12,7 @@ import healthHandler from './api/health.js'
 import identityCheckHandler from './api/identity-check.js'
 import staggeredScreeningHandler from './api/staggered-screening.js'
 import documentValidationHandler from './api/document-validation.js'
-import ageRestrictionHandler from './api/document-validation.js'
+import ageRestrictionHandler from './api/age-restriction.js'
 
 
 dotenv.config()
@@ -49,9 +49,8 @@ app.get('/api/checks', (req, res) => getClientCheckListHandler(req, res))
 app.post('/api/webhook', (req, res) => webhookHandler(req, res))
 
 app.post('/api/identity-check', async (req, res) => identityCheckHandler(req, res))
-app.post('/api/staggered-screening', async (req, res) => staggeredScreeningHandler(req, res))
-app.post('/api/staggered-screening', async (req, res) => staggeredScreeningHandler(req, res))
 app.post('/api/document-validation', async (req, res) => documentValidationHandler(req, res))
+app.post('/api/staggered-screening', async (req, res) => staggeredScreeningHandler(req, res))
 app.post('/api/age-restriction', async (req, res) => ageRestrictionHandler(req, res))
 
 app.get('/api/health', (req, res) => healthHandler(req, res))
