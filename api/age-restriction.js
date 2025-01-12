@@ -15,7 +15,7 @@ export default async function handler(req, res) {
 
     const documentCheck = await createCheck({
       clientId,
-      type: 'document_check',
+      type: 'identity_check',
       documentId,
     })
     res.json(documentCheck)
