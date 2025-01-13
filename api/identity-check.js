@@ -1,4 +1,4 @@
-import { createCheck } from "./create-checks";
+import { createCheck } from "./create-checks.js";
 
 export default async function handler(req, res) {
   const { clientId, documentId, livePhotoId } = req.body;
