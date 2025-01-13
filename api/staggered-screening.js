@@ -1,15 +1,20 @@
 export default async function handler(req, res) {
-  const { clientId } = req.body
+  const { clientId, liveVideoId, documentId } = req.body
+
   try {
     const standardCheck = await createCheck({
       clientId,
       type: 'standard_screening_check',
+      liveVideoId,
+      documentId,
     })
 
     if (standardCheck.result === 'clear') {
       const extensiveCheck = await createCheck({
         clientId,
         type: 'extensive_screening_check',
+        liveVideoId,
+        documentId,
       })
 
       if (extensiveCheck.result === 'clear') {
