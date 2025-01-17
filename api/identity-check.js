@@ -1,5 +1,6 @@
 import { createCheck } from "./create-checks.js";
 
+//  demo APIs, not fully TESTED, it's a pseudo code 
 export default async function handler(req, res) {
   const { clientId, documentId, livePhotoId } = req.body;
   try {
