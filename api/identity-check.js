@@ -10,7 +10,7 @@ export default async function handler(req, res) {
       livePhotoId,
     });
 
-    if (identityCheck.result === 'clear') {
+    if (identityCheck.result.outcome.outcome === 'clear') {
       const faceAuthCheck = await createCheck({
         clientId,
         type: 'face_authentication_check',

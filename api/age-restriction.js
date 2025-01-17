@@ -7,7 +7,7 @@ export default async function handler(req, res) {
       livePhotoId,
     })
 
-    if (ageEstimation.result === 'clear') {
+    if (ageEstimation.result.outcome === 'clear') {
       return res.json({
         message: 'Age verified. Client is above the required age.',
       })

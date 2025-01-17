@@ -7,7 +7,7 @@ export default async function assignAddress({ clientId, ...addressData }) {
       { clientId, addressData },
       {
         headers: {
-          Authorization: `process.env.COMPLYCUBE_API_KEY`,
+          Authorization: process.env.COMPLYCUBE_API_KEY,
           'Content-Type': 'application/json',
         },
       }

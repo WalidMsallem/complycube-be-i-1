@@ -9,7 +9,7 @@ export default async function handler(req, res) {
       documentId,
     })
 
-    if (standardCheck.result === 'clear') {
+    if (standardCheck.result.outcome === 'clear') {
       const extensiveCheck = await createCheck({
         clientId,
         type: 'extensive_screening_check',
@@ -17,7 +17,7 @@ export default async function handler(req, res) {
         documentId,
       })
 
-      if (extensiveCheck.result === 'clear') {
+      if (extensiveCheck.result.outcome === 'clear') {
         const monitoring = await enableMonitoring(clientId)
         return res.json({ message: 'Monitoring enabled', monitoring })
       }
